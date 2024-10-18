@@ -18,6 +18,7 @@ func TestCountdown(t *testing.T) {
 	if spySleeper.Calls != 3 {
 		t.Errorf("not enough calls to sleeper, we want 3, got %d", spySleeper.Calls)
 	}
+
 	t.Run("sleep before every print", func(t *testing.T) {
 		spySleepPrinter := &SpyCountdownOperations{}
 		Countdown(spySleepPrinter, spySleepPrinter)
